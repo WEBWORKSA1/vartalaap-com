@@ -1,0 +1,5 @@
+title: Vartalaap
+url: "https://vartalaap.com"
+baseurl: ""
+markdown: kramdown
+exclude: [README.md, BUILD-PROMPTS.md, RESEARCH.md]
