@@ -1,0 +1,54 @@
+---
+layout: default
+title: "Free Spoken English Tools — Speaking Pace, Filler Words, IELTS Band | Vartalaap"
+description: "Free fluency tools: speaking pace (WPM) meter, filler-word counter, Indian-English mistake checker, IELTS speaking band estimator, just-a-minute topics and a practice streak tracker."
+scripts: ["/assets/js/data.js"]
+---
+<section class="page-hero"><div class="wrap">
+<div class="crumbs"><a href="/">Home</a> › Fluency Tools</div>
+<span class="eyebrow">Measure what you can't hear</span>
+<h1>Fluency toolkit</h1>
+<p class="lead">Six free tools that turn “I think I speak okay” into numbers you can improve: pace, fillers, common slips, IELTS band and daily consistency.</p>
+</div></section>
+<section style="padding-top:10px"><div class="wrap">
+<div class="tool-tabs chips">
+<button class="on" data-tool="pace">⏱️ Pace meter</button><button data-tool="fillers">🧹 Filler counter</button><button data-tool="errors">🩹 Indian-English fixer</button><button data-tool="ielts">📊 IELTS band</button><button data-tool="jam">🎤 Just-a-minute</button><button data-tool="streak">🔥 Streak</button></div>
+
+<div class="tool card on" id="pace"><h2>Speaking pace &amp; filler meter</h2>
+<p>Speak on the topic below for 60–90 seconds. We count words per minute, filler words and vocabulary variety.</p>
+<div class="card" style="background:var(--bg);box-shadow:none"><p class="muted" style="margin:0">Your topic</p><p style="font-size:1.2rem;font-weight:600;margin:4px 0 8px" id="paceTopic"></p><button class="btn btn-ghost btn-sm" id="paceNew">New topic</button></div>
+<div class="toolbar"><select id="paceLang" aria-label="Speaking language" style="max-width:220px"><option value="en-IN">English (India)</option><option value="en-US">English (US)</option><option value="en-GB">English (UK)</option><option value="hi-IN">Hindi</option></select><button class="btn rec" id="paceBtn">🎙 Start speaking</button><span class="score" id="paceClock" style="font-size:1.6rem">0:00</span></div>
+<div class="transcript" id="paceTx" aria-live="polite"></div>
+<div class="kpis"><div class="kpi"><b id="p-wpm">—</b><span>Words / minute</span></div><div class="kpi"><b id="p-wc">0</b><span>Words</span></div><div class="kpi"><b id="p-fc">0</b><span>Fillers</span></div><div class="kpi"><b id="p-var">0%</b><span>Word variety</span></div></div>
+<p id="p-note" class="muted"></p>
+<p class="notice">Benchmarks: comfortable conversation is roughly 120–160 words per minute; presentations are usually a little slower. Fewer than 2 fillers per 100 words sounds confident.</p></div>
+
+<div class="tool card" id="fillers"><h2>Filler-word counter</h2><p>Paste a transcript of your speech (from your phone's dictation or a meeting recording) to count “um”, “like”, “basically”, “actually”, “matlab” and more.</p>
+<div class="field"><label for="fillText">Transcript</label><textarea id="fillText" placeholder="So basically, um, I was like working on the project and, you know, actually..."></textarea></div>
+<div class="row"><div class="field"><label for="fillSecs">Length of the recording (seconds, optional)</label><input id="fillSecs" type="number" min="0" placeholder="90"></div><div class="field" style="align-self:end"><button class="btn btn-primary btn-block" id="fillBtn">Analyse</button></div></div>
+<div class="kpis"><div class="kpi"><b id="f-wpm">—</b><span>Words / minute</span></div><div class="kpi"><b id="f-wc">0</b><span>Words</span></div><div class="kpi"><b id="f-fc">0</b><span>Fillers</span></div><div class="kpi"><b id="f-var">0%</b><span>Word variety</span></div></div><p id="f-note" class="muted"></p></div>
+
+<div class="tool card" id="errors"><h2>Indian-English fixer</h2><p>Paste an email, a WhatsApp message or your interview answer. We flag 30 patterns that sound natural in Indian English but confuse — or quietly put off — international listeners and recruiters.</p>
+<div class="field"><label for="errText">Your text</label><textarea id="errText" placeholder="Myself Rahul. I passed out from college in 2022. Kindly do the needful and revert back."></textarea></div>
+<button class="btn btn-primary" id="errBtn">Check my English</button><div id="errOut" style="margin-top:16px" aria-live="polite"></div>
+<p class="notice">This is a pattern checker, not a full grammar engine. Indian English is a valid variety — these suggestions help when your audience is global.</p></div>
+
+<div class="tool card" id="ielts"><h2>IELTS speaking band estimator</h2><p>Rate yourself (or ask a friend to rate you) on the four public IELTS speaking criteria. We apply the standard rounding to give the reported band.</p>
+<div class="grid g2">
+<div class="field"><label for="i-fc">Fluency &amp; coherence: <b id="i-fcv"></b></label><input type="range" id="i-fc" min="1" max="9" step="1" value="6"></div>
+<div class="field"><label for="i-lr">Lexical resource: <b id="i-lrv"></b></label><input type="range" id="i-lr" min="1" max="9" step="1" value="6"></div>
+<div class="field"><label for="i-gr">Grammatical range &amp; accuracy: <b id="i-grv"></b></label><input type="range" id="i-gr" min="1" max="9" step="1" value="6"></div>
+<div class="field"><label for="i-pr">Pronunciation: <b id="i-prv"></b></label><input type="range" id="i-pr" min="1" max="9" step="1" value="6"></div></div>
+<div class="kpis"><div class="kpi"><b id="i-band">6.0</b><span>Estimated speaking band</span></div></div><p id="i-note" class="muted"></p>
+<p class="notice">Unofficial estimate for practice. Only an official IELTS test gives a certified band. <a href="/learn/ielts-speaking-tips.html">Read our IELTS speaking tips →</a></p></div>
+
+<div class="tool card" id="jam"><h2>Just-a-minute (JAM)</h2><p>Get a random topic and speak until the timer ends — no stopping, no repeating, no long pauses. A classic warm-up used in campus placements.</p>
+<div class="toolbar"><select id="jamLen" aria-label="Timer length" style="max-width:160px"><option value="60">60 seconds</option><option value="90">90 seconds</option><option value="120">2 minutes</option></select><button class="btn btn-primary" id="jamBtn">New topic &amp; start</button><span class="score" id="jamClock" style="font-size:1.6rem">—</span></div>
+<p style="font-size:1.35rem;font-weight:600" id="jamTopic">Press the button to get your topic.</p></div>
+
+<div class="tool card" id="streak"><h2>Daily practice streak</h2><p>Log each day you practise for at least ten minutes. Your streak lives only in this browser.</p>
+<div class="kpis"><div class="kpi"><b id="streakNum">0</b><span>Day streak</span></div><div class="kpi"><b id="streakTotal">0</b><span>Total days</span></div></div>
+<div id="streakCal" aria-label="Last 28 days" style="margin-bottom:14px"></div>
+<button class="btn btn-primary" id="streakBtn">I practised today</button></div>
+</div></section>
+<section class="section-alt"><div class="wrap"><div class="band"><div><h2>Numbers show the gap. A coach closes it.</h2><p>Share your pace, fillers and level with a verified coach and get a 30-day plan in a free demo class.</p></div><div><a class="btn btn-primary btn-block" href="/coach.html">Book a free demo</a></div></div></div></section>
